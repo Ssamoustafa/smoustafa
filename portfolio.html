@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <meta
+    name="description"
+    content="Sarah Moustafa is an ISTQB-certified Senior QA Automation Engineer in Zuid-Holland with 6 years of experience in automation, API, performance, accessibility, and CI/CD quality engineering."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sarah Moustafa | Senior QA Automation Engineer" />
+  <meta
+    property="og:description"
+    content="Senior QA automation across Selenium, Cypress, Playwright, API, performance, accessibility, and CI/CD delivery."
+  />
+  <meta property="og:image" content="https://github.com/Ssamoustafa.png?size=800" />
+  <meta name="twitter:card" content="summary" />
+  <title>Sarah Moustafa | Senior QA Automation Engineer</title>
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307111f'/%3E%3Cpath d='M17 42V22h13c8 0 13 4 13 10S38 42 30 42H17Zm9-7h4c3 0 5-1 5-3s-2-3-5-3h-4v6Z' fill='%2369f0c0'/%3E%3Ccircle cx='47' cy='46' r='5' fill='%2399a8ff'/%3E%3C/svg%3E"
+  />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --surface: rgba(255, 255, 255, 0.055);
+      --surface-strong: rgba(255, 255, 255, 0.095);
+      --text: #f5f8ff;
+      --muted: #a7b4c7;
+      --line: rgba(255, 255, 255, 0.12);
+      --mint: #69f0c0;
+      --mint-strong: #27d9a3;
+      --violet: #99a8ff;
+      --blue: #61b7ff;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --container: 1160px;
+      --header: rgba(7, 17, 31, 0.74);
+    }
+
+    body[data-theme="light"] {
+      --bg: #f4f7fb;
+      --bg-soft: #ffffff;
+      --surface: rgba(15, 34, 58, 0.055);
+      --surface-strong: rgba(15, 34, 58, 0.09);
+      --text: #102238;
+      --muted: #566a82;
+      --line: rgba(15, 34, 58, 0.13);
+      --mint: #0c9f76;
+      --mint-strong: #087b5d;
+      --violet: #596bd7;
+      --blue: #177fc0;
+      --shadow: 0 30px 80px rgba(33, 57, 83, 0.12);
+      --header: rgba(244, 247, 251, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 14% 7%, rgba(105, 240, 192, 0.12), transparent 30rem),
+        radial-gradient(circle at 92% 13%, rgba(153, 168, 255, 0.14), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+      opacity: 0.38;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    ::selection {
+      background: var(--mint);
+      color: #07111f;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--text);
+      color: var(--bg);
+      transform: translateY(-150%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      background: var(--header);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.94rem;
+      font-weight: 850;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: linear-gradient(145deg, rgba(105, 240, 192, 0.18), rgba(153, 168, 255, 0.12));
+      color: var(--mint);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-right,
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-right {
+      gap: 18px;
+    }
+
+    .nav-links {
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--surface-strong);
+      transform: translateY(-2px);
+    }
+
+    .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .hero {
+      min-height: calc(100svh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+      align-items: center;
+      gap: clamp(42px, 7vw, 86px);
+      padding: 86px 0 72px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--mint);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 13%, transparent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 830px;
+      margin-bottom: 26px;
+      font-size: clamp(3.3rem, 7.8vw, 7rem);
+      line-height: 0.94;
+      letter-spacing: -0.066em;
+    }
+
+    h1 .accent {
+      background: linear-gradient(100deg, var(--mint), var(--blue) 54%, var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+    }
+
+    .hero-copy strong {
+      color: var(--text);
+      font-weight: 760;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 19px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      font-weight: 780;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      border-color: transparent;
+      background: var(--mint);
+      color: #07111f;
+      box-shadow: 0 15px 34px rgba(39, 217, 163, 0.22);
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      background: var(--mint-strong);
+      color: #fff;
+    }
+
+    .button.secondary {
+      background: var(--surface);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      border-color: color-mix(in srgb, var(--mint) 45%, var(--line));
+      background: var(--surface-strong);
+    }
+
+    .button svg,
+    .text-link svg {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+    }
+
+    .profile-shell {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .profile-shell::before,
+    .profile-shell::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+
+    .profile-shell::before {
+      width: 150px;
+      height: 150px;
+      top: -28px;
+      right: -24px;
+      background: rgba(153, 168, 255, 0.17);
+    }
+
+    .profile-shell::after {
+      width: 120px;
+      height: 120px;
+      bottom: -24px;
+      left: -18px;
+      background: rgba(105, 240, 192, 0.14);
+    }
+
+    .profile-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, var(--surface-strong), var(--surface));
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      position: relative;
+      min-height: 345px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(to top, rgba(7, 17, 31, 0.92), transparent 45%),
+        linear-gradient(135deg, rgba(105, 240, 192, 0.24), rgba(153, 168, 255, 0.22)),
+        var(--bg-soft);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .portrait-fallback {
+      color: var(--mint);
+      font-size: clamp(5rem, 13vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -0.09em;
+    }
+
+    .portrait-label {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      z-index: 2;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .portrait-label strong {
+      display: block;
+      font-size: 1.26rem;
+      letter-spacing: -0.025em;
+    }
+
+    .portrait-label span {
+      color: #dce7f6;
+      font-size: 0.9rem;
+    }
+
+    .location-pill {
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(7, 17, 31, 0.55);
+      color: #fff !important;
+      font-size: 0.78rem !important;
+      font-weight: 750;
+      white-space: nowrap;
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-body {
+      padding: 22px;
+    }
+
+    .signal-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+
+    .signal {
+      min-height: 88px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--surface);
+    }
+
+    .signal small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .signal strong {
+      display: block;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 18px;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--mint);
+      font-weight: 760;
+    }
+
+    .status::before {
+      width: 8px;
+      height: 8px;
+      content: "";
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.62fr);
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.35rem, 5.4vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.052em;
+    }
+
+    .section-heading p {
+      margin-bottom: 5px;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      gap: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    }
+
+    .about-copy {
+      padding: clamp(26px, 5vw, 48px);
+    }
+
+    .about-copy p {
+      max-width: 710px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+    }
+
+    .about-copy strong {
+      color: var(--text);
+    }
+
+    .principles {
+      padding: 18px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+
+    .principle-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--mint) 13%, transparent);
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .principle h3 {
+      margin: 1px 0 4px;
+      font-size: 1rem;
+    }
+
+    .principle p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.52fr) minmax(0, 1.48fr);
+      gap: clamp(26px, 5vw, 72px);
+      padding: clamp(26px, 4vw, 42px);
+    }
+
+    .experience-period {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .experience-company {
+      margin-bottom: 7px;
+      font-size: clamp(1.65rem, 3vw, 2.2rem);
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .experience-role {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .experience-lead {
+      max-width: 760px;
+      margin-bottom: 18px;
+      color: var(--text);
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+
+    .experience-highlights {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .experience-highlights li {
+      position: relative;
+      padding-left: 19px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .experience-highlights li::before {
+      position: absolute;
+      top: 0.67em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      content: "";
+      border-radius: 50%;
+      background: var(--mint);
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .experience-tag {
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .expertise-card {
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--mint) 35%, var(--line));
+      background: var(--surface-strong);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 68px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(105, 240, 192, 0.14), rgba(153, 168, 255, 0.11));
+      color: var(--mint);
+    }
+
+    .card-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .expertise-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .expertise-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .toolbox {
+      margin-top: 18px;
+      padding: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 720;
+    }
+
+    .tool::before {
+      width: 6px;
+      height: 6px;
+      content: "";
+      border-radius: 50%;
+      background: var(--mint);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      overflow: hidden;
+    }
+
+    .process-step {
+      min-height: 245px;
+      padding: 25px;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      border-right: 0;
+    }
+
+    .process-step .step-label {
+      display: block;
+      margin-bottom: 72px;
+      color: var(--mint);
+      font-size: 0.77rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .process-step h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .process-step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .repo-card {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--violet) 38%, var(--line));
+      background: var(--surface-strong);
+    }
+
+    .repo-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 42px;
+    }
+
+    .repo-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--violet);
+    }
+
+    .repo-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .repo-arrow {
+      color: var(--muted);
+    }
+
+    .repo-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.16rem;
+      letter-spacing: -0.02em;
+      overflow-wrap: anywhere;
+    }
+
+    .repo-card p {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .repo-meta {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 16px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .repo-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .language-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+    }
+
+    .projects-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(34px, 7vw, 76px);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0, rgba(105, 240, 192, 0.18), transparent 44%),
+        radial-gradient(circle at 90% 100%, rgba(153, 168, 255, 0.15), transparent 38%),
+        var(--surface);
+    }
+
+    .contact-card::before {
+      position: absolute;
+      inset: 16px;
+      content: "";
+      pointer-events: none;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card h2 {
+      max-width: 850px;
+      margin: 0 auto 18px;
+      font-size: clamp(2.5rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.058em;
+    }
+
+    .contact-card p {
+      max-width: 640px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .contact-card .actions {
+      justify-content: center;
+    }
+
+    .site-footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--text);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .profile-shell {
+        width: min(100%, 600px);
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-card {
+        min-height: 0;
+      }
+
+      .card-icon {
+        margin-bottom: 40px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-step:nth-child(2) {
+        border-right: 0;
+      }
+
+      .process-step:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-right {
+        gap: 8px;
+      }
+
+      .hero {
+        gap: 44px;
+        padding: 64px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(3.05rem, 16vw, 5.2rem);
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .projects-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step,
+      .process-step:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-step:last-child {
+        border-bottom: 0;
+      }
+
+      .process-step .step-label {
+        margin-bottom: 38px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-name {
+        display: none;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+
+      .portrait {
+        min-height: 305px;
+      }
+
+      .portrait-label {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .signal-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sarah Moustafa",
+      "jobTitle": "Senior QA Automation Engineer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Zuid-Holland",
+        "addressCountry": "NL"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/sarahmoustafa1",
+        "https://github.com/Ssamoustafa"
+      ],
+      "knowsAbout": [
+        "Quality Engineering",
+        "Test Automation",
+        "Selenium",
+        "Java",
+        "Cypress",
+        "Playwright",
+        "API Contract Testing",
+        "Performance Testing",
+        "Web Accessibility",
+        "CI/CD"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Sarah Moustafa home">
+        <span class="brand-mark" aria-hidden="true">SM</span>
+        <span class="brand-name">Sarah Moustafa</span>
+      </a>
+
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#work">GitHub</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.64 5.64l1.42 1.42M16.94 16.94l1.42 1.42M18.36 5.64l-1.42 1.42M7.06 16.94l-1.42 1.42" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container" id="top">
+      <section class="hero">
+        <div class="reveal">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ISTQB-certified Senior QA Automation Engineer</div>
+          <h1>I build <span class="accent">reliable releases</span> through better test automation.</h1>
+          <p class="hero-copy">
+            I’m <strong>Sarah Moustafa</strong>, a Senior QA Automation Engineer with 6 years of experience across
+            UI, API, performance, and accessibility testing. I build scalable automation with Selenium, Cypress, and
+            Playwright, then connect it to CI/CD pipelines so teams get feedback they can act on.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="mailto:sarah.moustafa.qa@gmail.com">
+              Start a conversation
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17 17 7M7 7h10v10" />
+              </svg>
+            </a>
+            <a class="button secondary" href="#experience">
+              View experience
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M6 13l6 6 6-6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-shell reveal">
+          <article class="profile-card" aria-label="Sarah Moustafa profile summary">
+            <div class="portrait">
+              <div class="portrait-fallback" aria-hidden="true">SM</div>
+              <img
+                src="https://github.com/Ssamoustafa.png?size=900"
+                alt="Sarah Moustafa"
+                width="900"
+                height="900"
+                loading="eager"
+                onerror="this.style.display='none'"
+              />
+              <div class="portrait-label">
+                <div>
+                  <strong>Sarah Moustafa</strong>
+                  <span>Senior QA Automation Engineer</span>
+                </div>
+                <span class="location-pill">Zuid-Holland, NL</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <div class="signal-row">
+                <div class="signal"><small>Experience</small><strong>6 years in QA engineering</strong></div>
+                <div class="signal"><small>Current role</small><strong>Senior QA Automation Engineer, PostNL</strong></div>
+                <div class="signal"><small>Automation</small><strong>Selenium, Cypress & Playwright</strong></div>
+                <div class="signal"><small>Quality scope</small><strong>UI, API, performance & accessibility</strong></div>
+              </div>
+              <div class="trust-strip">
+                <span class="status">ISTQB CTFL certified</span>
+                <span>Automation built for useful feedback.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2>Quality is a team capability.</h2>
+          </div>
+          <p>
+            I approach testing as an engineering discipline: thoughtful design, maintainable automation,
+            and fast feedback that supports better product decisions.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel about-copy reveal">
+            <p>
+              I work at the intersection of <strong>software quality and engineering</strong>. My focus is on
+              creating automation that teams can trust, testing complex interfaces, and making failures easier to
+              understand. In enterprise SAFe and Agile Scrum environments, I define test strategy across squads and
+              build quality feedback into delivery pipelines through UI, API, performance, and accessibility testing.
+            </p>
+          </article>
+
+          <aside class="panel principles reveal" aria-label="Quality engineering principles">
+            <div class="principle">
+              <span class="principle-number">01</span>
+              <div><h3>Build for maintainability</h3><p>Readable abstractions and thoughtful structure keep automation useful as products evolve.</p></div>
+            </div>
+            <div class="principle">
+              <span class="principle-number">02</span>
+              <div><h3>Test what matters</h3><p>Prioritize meaningful user journeys, risks, and feedback over test volume alone.</p></div>
+            </div>
+            <div class="principle">
+              <span class="principle-number">03</span>
+              <div><h3>Make failures actionable</h3><p>Good reporting turns a failed check into a clear next step for the team.</p></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2>Quality engineering in real delivery environments.</h2>
+          </div>
+          <p>
+            From enterprise logistics to subscription streaming, I build practical quality systems that support delivery teams,
+            not just test suites.
+          </p>
+        </div>
+
+        <div class="experience-list">
+          <article class="panel experience-item reveal">
+            <div>
+              <span class="experience-period">Jan 2024 - Present</span>
+              <h3 class="experience-company">PostNL</h3>
+              <p class="experience-role">Senior QA Automation Engineer · SAFe environment</p>
+            </div>
+            <div>
+              <p class="experience-lead">Shape scalable test strategy and delivery feedback across multiple squads in a large enterprise environment.</p>
+              <ul class="experience-highlights">
+                <li>Define and optimize test scope, objectives, strategy, and resource requirements across squads.</li>
+                <li>Build and maintain Selenium with Java and BDD automation, plus Cypress and TypeScript end-to-end chatbot journeys.</li>
+                <li>Automate REST Assured API contract tests and connect UI, API, and performance checks to GitLab CI/CD pipelines.</li>
+                <li>Own WCAG accessibility testing for PostNL.nl and PostNL.be, while leading an AI-assisted testing initiative in the ART.</li>
+              </ul>
+              <div class="experience-tags" aria-label="PostNL technology stack">
+                <span class="experience-tag">Selenium</span><span class="experience-tag">Java</span><span class="experience-tag">Cypress</span><span class="experience-tag">TypeScript</span><span class="experience-tag">REST Assured</span><span class="experience-tag">GitLab CI/CD</span><span class="experience-tag">JMeter</span><span class="experience-tag">WCAG</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel experience-item reveal">
+            <div>
+              <span class="experience-period">Jul 2021 - Dec 2022</span>
+              <h3 class="experience-company">CliqDigital</h3>
+              <p class="experience-role">QA Engineer · Subscription streaming services</p>
+            </div>
+            <div>
+              <p class="experience-lead">Established and owned the QA process for Cliq.de, bringing repeatable automation and clear delivery traceability to a subscription product.</p>
+              <ul class="experience-highlights">
+                <li>Automated end-to-end regression coverage with Cypress and JavaScript.</li>
+                <li>Performed web, API, performance, and database testing across the product.</li>
+                <li>Integrated automated tests into GitHub CI/CD pipelines, managed defects in JIRA, and mentored scholarship students.</li>
+              </ul>
+              <div class="experience-tags" aria-label="CliqDigital technology stack">
+                <span class="experience-tag">Cypress</span><span class="experience-tag">JavaScript</span><span class="experience-tag">GitHub CI/CD</span><span class="experience-tag">JIRA</span><span class="experience-tag">API testing</span><span class="experience-tag">Database testing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel experience-item reveal">
+            <div>
+              <span class="experience-period">Oct 2018 - Oct 2020</span>
+              <h3 class="experience-company">uTest</h3>
+              <p class="experience-role">Software Tester · Testing platform</p>
+            </div>
+            <div>
+              <p class="experience-lead">Developed a broad testing foundation across web, mobile, and TV platforms, with a focus on precise defect reporting and product collaboration.</p>
+              <ul class="experience-highlights">
+                <li>Executed functional, UI, compatibility, and performance testing across multiple platform types.</li>
+                <li>Reported high-quality, reproducible defects and worked directly with developers to clarify and resolve issues.</li>
+              </ul>
+              <div class="experience-tags" aria-label="uTest testing coverage">
+                <span class="experience-tag">Web</span><span class="experience-tag">Mobile</span><span class="experience-tag">TV platforms</span><span class="experience-tag">Compatibility</span><span class="experience-tag">Performance</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="expertise">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Expertise</div>
+            <h2>Where I add value.</h2>
+          </div>
+          <p>
+            Practical quality engineering across automation, API contracts, performance, accessibility, and the
+            feedback loops teams need to release dependable software.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          <article class="panel expertise-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2" /><path d="m8 10 3 2-3 2M13 15h3" />
+              </svg>
+            </div>
+            <h3>Test Automation</h3>
+            <p>Designing maintainable UI automation with Selenium and Java, Cypress, and Playwright using reusable patterns that support product change.</p>
+          </article>
+
+          <article class="panel expertise-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5h16v14H4z" /><path d="M4 9h16M8 5v4M12 5v4" /><path d="m9 14 2 2 4-4" />
+              </svg>
+            </div>
+            <h3>Quality Coverage</h3>
+            <p>Combining UI, API contract, performance, and accessibility testing to cover the risks that matter across modern digital products.</p>
+          </article>
+
+          <article class="panel expertise-card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" /><path d="m4 6 5-3 6 4 6-5" />
+              </svg>
+            </div>
+            <h3>Quality Feedback</h3>
+            <p>Integrating checks into GitLab and GitHub pipelines, then improving reporting so failures are visible, understandable, and actionable.</p>
+          </article>
+        </div>
+
+        <div class="panel toolbox reveal" aria-label="Tools and topics">
+          <span class="tool">Selenium</span>
+          <span class="tool">Java</span>
+          <span class="tool">Cypress</span>
+          <span class="tool">Playwright</span>
+          <span class="tool">TypeScript</span>
+          <span class="tool">REST Assured</span>
+          <span class="tool">JMeter</span>
+          <span class="tool">axe-core / WCAG</span>
+          <span class="tool">GitLab CI/CD</span>
+          <span class="tool">GitHub CI/CD</span>
+          <span class="tool">Allure</span>
+          <span class="tool">Appium</span>
+          <span class="tool">BrowserStack</span>
+          <span class="tool">Xray</span>
+          <span class="tool">JIRA</span>
+          <span class="tool">New Relic</span>
+          <span class="tool">DataDog</span>
+          <span class="tool">ISTQB CTFL</span>
+        </div>
+      </section>
+
+      <section id="approach">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Approach</div>
+            <h2>A clear route to confidence.</h2>
+          </div>
+          <p>Quality works best when it is considered throughout delivery, from understanding risk to learning from every test run.</p>
+        </div>
+
+        <div class="panel process-grid reveal">
+          <article class="process-step"><span class="step-label">01 · UNDERSTAND</span><h3>Map the risk</h3><p>Clarify the user journey, system behavior, and the failures that would matter most.</p></article>
+          <article class="process-step"><span class="step-label">02 · DESIGN</span><h3>Choose the right test</h3><p>Use the most useful level and technique instead of automating everything by default.</p></article>
+          <article class="process-step"><span class="step-label">03 · AUTOMATE</span><h3>Build for change</h3><p>Create readable, reusable tests that can evolve alongside the product.</p></article>
+          <article class="process-step"><span class="step-label">04 · LEARN</span><h3>Turn results into action</h3><p>Use clear reporting to shorten diagnosis and continuously improve the quality strategy.</p></article>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Open source & practice</div>
+            <h2>Latest from GitHub.</h2>
+          </div>
+          <p>
+            This section loads Sarah’s most recently updated public repositories directly from GitHub.
+          </p>
+        </div>
+
+        <div class="projects-grid" id="repos" aria-live="polite">
+          <article class="panel repo-card reveal">
+            <div class="repo-top"><span class="repo-icon" aria-hidden="true">…</span></div>
+            <h3>Loading projects</h3>
+            <p>Fetching the latest public repositories from GitHub.</p>
+          </article>
+          <article class="panel repo-card reveal">
+            <div class="repo-top"><span class="repo-icon" aria-hidden="true">…</span></div>
+            <h3>Quality engineering practice</h3>
+            <p>Code examples, experiments, and learning projects will appear here.</p>
+          </article>
+        </div>
+        <p class="projects-note" id="repo-note">Repository information is provided by the public GitHub API.</p>
+      </section>
+
+      <section id="contact">
+        <article class="panel contact-card reveal">
+          <div class="section-kicker">Let’s connect</div>
+          <h2>Build better quality into every release.</h2>
+          <p>
+            Let's talk about senior QA automation, test strategy, CI/CD quality gates, performance, accessibility,
+            or opportunities to make dependable software delivery a team habit. Recommendation letters are available on request.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="mailto:sarah.moustafa.qa@gmail.com">
+              Email Sarah
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10" /></svg>
+            </a>
+            <a class="button secondary" href="https://www.linkedin.com/in/sarahmoustafa1" target="_blank" rel="noopener noreferrer">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Sarah Moustafa. Built for GitHub Pages.</span>
+      <div class="footer-links">
+        <a href="mailto:sarah.moustafa.qa@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/sarahmoustafa1" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Ssamoustafa" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const year = document.getElementById("year");
+    year.textContent = new Date().getFullYear();
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem("sarah-portfolio-theme");
+    } catch (_) {
+      savedTheme = null;
+    }
+
+    if (savedTheme === "light" || (!savedTheme && prefersLight)) {
+      document.body.dataset.theme = "light";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.dataset.theme === "light" ? "dark" : "light";
+      document.body.dataset.theme = nextTheme;
+      try {
+        localStorage.setItem("sarah-portfolio-theme", nextTheme);
+      } catch (_) {
+        // The theme still changes even when browser storage is unavailable.
+      }
+    });
+
+    const repoContainer = document.getElementById("repos");
+    const repoNote = document.getElementById("repo-note");
+    const escapeHTML = (value = "") =>
+      value.replace(/[&<>'"]/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        '"': "&quot;"
+      })[character]);
+
+    const repoIcon = `
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h11a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z" />
+        <path d="M17 8h3v12h-3M8 8h5M8 12h5" />
+      </svg>`;
+
+    fetch("https://api.github.com/users/Ssamoustafa/repos?sort=updated&per_page=100")
+      .then((response) => {
+        if (!response.ok) throw new Error("GitHub request failed");
+        return response.json();
+      })
+      .then((repositories) => {
+        const selected = repositories
+          .filter((repo) => !repo.fork && repo.name.toLowerCase() !== "ssamoustafa")
+          .slice(0, 4);
+
+        if (!selected.length) throw new Error("No repositories found");
+
+        repoContainer.innerHTML = selected
+          .map((repo) => {
+            const description = repo.description || "A public project from Sarah’s GitHub profile.";
+            const language = repo.language || "Repository";
+            const updated = new Intl.DateTimeFormat("en", { month: "short", year: "numeric" }).format(new Date(repo.updated_at));
+
+            return `
+              <a class="panel repo-card reveal visible" href="${escapeHTML(repo.html_url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHTML(repo.name)} on GitHub">
+                <div class="repo-top">
+                  <span class="repo-icon">${repoIcon}</span>
+                  <svg class="repo-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10" /></svg>
+                </div>
+                <h3>${escapeHTML(repo.name.replace(/[-_]/g, " "))}</h3>
+                <p>${escapeHTML(description)}</p>
+                <div class="repo-meta">
+                  <span><i class="language-dot" aria-hidden="true"></i>${escapeHTML(language)}</span>
+                  <span>Updated ${escapeHTML(updated)}</span>
+                  ${repo.stargazers_count ? `<span>★ ${repo.stargazers_count}</span>` : ""}
+                </div>
+              </a>`;
+          })
+          .join("");
+      })
+      .catch(() => {
+        repoContainer.innerHTML = `
+          <article class="panel repo-card reveal visible">
+            <div class="repo-top"><span class="repo-icon">${repoIcon}</span></div>
+            <h3>Explore Sarah’s repositories</h3>
+            <p>The live project list could not be loaded, but the complete public profile is available on GitHub.</p>
+            <div class="repo-meta"><span>Quality engineering</span><span>Test automation</span></div>
+          </article>
+          <a class="panel repo-card reveal visible" href="https://github.com/Ssamoustafa" target="_blank" rel="noopener noreferrer">
+            <div class="repo-top"><span class="repo-icon">${repoIcon}</span><span class="repo-arrow">↗</span></div>
+            <h3>github.com/Ssamoustafa</h3>
+            <p>Open the GitHub profile to see current projects, experiments, and code.</p>
+            <div class="repo-meta"><span>View profile</span></div>
+          </a>`;
+        repoNote.textContent = "The live GitHub project feed is temporarily unavailable.";
+      });
+  </script>
+</body>
+</html>
