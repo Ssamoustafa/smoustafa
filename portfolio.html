@@ -6,13 +6,13 @@
   <meta name="theme-color" content="#07111f" />
   <meta
     name="description"
-    content="Sarah Moustafa is an ISTQB-certified Senior QA Automation Engineer in Zuid-Holland with 6 years of experience in automation, API, performance, accessibility, and CI/CD quality engineering."
+    content="Sarah Moustafa is an ISTQB-certified Senior QA Automation Engineer in Zuid-Holland with 8 years in QA, 6+ of them in the Dutch market, across automation, API, performance, accessibility, and CI/CD quality engineering."
   />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sarah Moustafa | Senior QA Automation Engineer" />
   <meta
     property="og:description"
-    content="Senior QA automation across Selenium, Cypress, Playwright, API, performance, accessibility, and CI/CD delivery."
+    content="8 years in QA. Senior QA automation across Selenium, Cypress, Playwright, API, performance, accessibility, and CI/CD delivery. ISTQB CTFL and CT-GenAI certified."
   />
   <meta name="twitter:card" content="summary" />
   <title>Sarah Moustafa | Senior QA Automation Engineer</title>
@@ -507,6 +507,12 @@
       background: currentColor;
     }
 
+    a.status:hover,
+    a.status:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     section {
       padding: 96px 0;
     }
@@ -771,6 +777,98 @@
       background: var(--mint);
     }
 
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cert-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 24px;
+      padding: 26px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--mint) 35%, var(--line));
+      background: var(--surface-strong);
+    }
+
+    .cert-badge {
+      width: 104px;
+      height: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(105, 240, 192, 0.18), rgba(153, 168, 255, 0.14));
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-align: center;
+      transition: transform 160ms ease;
+    }
+
+    .cert-badge:hover,
+    .cert-badge:focus-visible {
+      transform: scale(1.04);
+    }
+
+    .cert-badge svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .cert-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 24px;
+    }
+
+    .cert-card h3 {
+      margin-bottom: 4px;
+      font-size: 1.12rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .cert-meta {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .cert-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 760;
+    }
+
+    .cert-links a {
+      color: var(--mint);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 4px;
+      transition: text-decoration-color 160ms ease;
+    }
+
+    .cert-links a:hover,
+    .cert-links a:focus-visible {
+      text-decoration-color: currentColor;
+    }
+
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1015,7 +1113,8 @@
         gap: 26px;
       }
 
-      .expertise-grid {
+      .expertise-grid,
+      .cert-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1117,6 +1216,17 @@
       .signal-row {
         grid-template-columns: 1fr;
       }
+
+      .cert-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .trust-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
     }
   </style>
 
@@ -1134,6 +1244,22 @@
       "sameAs": [
         "https://www.linkedin.com/in/sarahmoustafa1",
         "https://github.com/Ssamoustafa"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISTQB Certified Tester Foundation Level (CTFL)",
+          "credentialCategory": "certification",
+          "url": "https://www.credly.com/badges/dfa09761-6ab9-43f9-a7b4-84fc699c3c23",
+          "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISTQB Certified Tester - Testing with GenAI (CT-GenAI v1.1)",
+          "credentialCategory": "certification",
+          "url": "https://app.skillsclub.com/credential/304028-c94205af359265c9811e592938ab912e783dcf5a62a77e10ab8971ba566b6733?locale=en",
+          "recognizedBy": { "@type": "Organization", "name": "ISTQB" }
+        }
       ],
       "knowsAbout": [
         "Quality Engineering",
@@ -1165,6 +1291,7 @@
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#expertise">Expertise</a>
+          <a href="#certifications">Certifications</a>
           <a href="#work">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -1185,9 +1312,10 @@
           <div class="eyebrow"><span class="eyebrow-dot"></span> ISTQB-certified Senior QA Automation Engineer</div>
           <h1>I build <span class="accent">reliable releases</span> through better test automation.</h1>
           <p class="hero-copy">
-            I’m <strong>Sarah Moustafa</strong>, a Senior QA Automation Engineer with 6 years of experience across
-            UI, API, performance, and accessibility testing. I build scalable automation with Selenium, Cypress, and
-            Playwright, then connect it to CI/CD pipelines so teams get feedback they can act on.
+            I’m <strong>Sarah Moustafa</strong>, a Senior QA Automation Engineer with <strong>8 years in QA</strong>,
+            six-plus of them in the Dutch market, across UI, API, performance, and accessibility testing. I build scalable
+            automation with Selenium, Cypress, and Playwright, then connect it to CI/CD pipelines so teams get feedback
+            they can act on.
           </p>
           <div class="actions">
             <a class="button primary" href="mailto:sarah.moustafa.qa@gmail.com">
@@ -1219,13 +1347,13 @@
             </div>
             <div class="profile-body">
               <div class="signal-row">
-                <div class="signal"><small>Experience</small><strong>6 years in QA engineering</strong></div>
+                <div class="signal"><small>Experience</small><strong>8 years in QA · 6+ in the Dutch market</strong></div>
                 <div class="signal"><small>Current role</small><strong>Senior QA Automation Engineer, PostNL</strong></div>
                 <div class="signal"><small>Automation</small><strong>Selenium, Cypress & Playwright</strong></div>
                 <div class="signal"><small>Quality scope</small><strong>UI, API, performance & accessibility</strong></div>
               </div>
               <div class="trust-strip">
-                <span class="status">ISTQB CTFL certified</span>
+                <a class="status" href="#certifications">ISTQB CTFL &amp; CT-GenAI certified</a>
                 <span>Automation built for useful feedback.</span>
               </div>
             </div>
@@ -1297,10 +1425,10 @@
                 <li>Define and optimize test scope, objectives, strategy, and resource requirements across squads.</li>
                 <li>Build and maintain Selenium with Java and BDD automation, plus Cypress and TypeScript end-to-end chatbot journeys.</li>
                 <li>Automate REST Assured API contract tests and connect UI, API, and performance checks to GitLab CI/CD pipelines.</li>
-                <li>Own WCAG accessibility testing for PostNL.nl and PostNL.be, while leading an AI-assisted testing initiative in the ART.</li>
+                <li>Own WCAG accessibility testing for PostNL.nl and PostNL.be, while leading an AI-assisted testing initiative in the ART (ISTQB CT-GenAI certified).</li>
               </ul>
               <div class="experience-tags" aria-label="PostNL technology stack">
-                <span class="experience-tag">Selenium</span><span class="experience-tag">Java</span><span class="experience-tag">Cypress</span><span class="experience-tag">TypeScript</span><span class="experience-tag">REST Assured</span><span class="experience-tag">GitLab CI/CD</span><span class="experience-tag">JMeter</span><span class="experience-tag">WCAG</span>
+                <span class="experience-tag">Selenium</span><span class="experience-tag">Java</span><span class="experience-tag">Cypress</span><span class="experience-tag">TypeScript</span><span class="experience-tag">REST Assured</span><span class="experience-tag">GitLab CI/CD</span><span class="experience-tag">JMeter</span><span class="experience-tag">WCAG</span><span class="experience-tag">GenAI testing</span>
               </div>
             </div>
           </article>
@@ -1326,18 +1454,19 @@
 
           <article class="panel experience-item reveal">
             <div>
-              <span class="experience-period">Oct 2018 - Oct 2020</span>
+              <span class="experience-period">Nov 2018 - Jun 2021</span>
               <h3 class="experience-company">uTest</h3>
-              <p class="experience-role">Software Tester · Testing platform</p>
+              <p class="experience-role">Software Tester · Freelance, remote</p>
             </div>
             <div>
-              <p class="experience-lead">Developed a broad testing foundation across web, mobile, and TV platforms, with a focus on precise defect reporting and product collaboration.</p>
+              <p class="experience-lead">Built a broad testing foundation as a freelance tester, working from design files and reference builds and focusing on precise, actionable defect reporting.</p>
               <ul class="experience-highlights">
-                <li>Executed functional, UI, compatibility, and performance testing across multiple platform types.</li>
-                <li>Reported high-quality, reproducible defects and worked directly with developers to clarify and resolve issues.</li>
+                <li>Performed functional, UI, and compatibility testing, using Figma files as the reference for UI checks.</li>
+                <li>Ran smoke tests against RSR reference files and mobile regression passes from an end-user perspective.</li>
+                <li>Submitted actionable, reproducible bug reports that helped teams diagnose and resolve issues quickly.</li>
               </ul>
               <div class="experience-tags" aria-label="uTest testing coverage">
-                <span class="experience-tag">Web</span><span class="experience-tag">Mobile</span><span class="experience-tag">TV platforms</span><span class="experience-tag">Compatibility</span><span class="experience-tag">Performance</span>
+                <span class="experience-tag">Functional</span><span class="experience-tag">UI vs Figma</span><span class="experience-tag">Compatibility</span><span class="experience-tag">Smoke</span><span class="experience-tag">Mobile regression</span><span class="experience-tag">Bug reporting</span>
               </div>
             </div>
           </article>
@@ -1407,6 +1536,60 @@
           <span class="tool">New Relic</span>
           <span class="tool">DataDog</span>
           <span class="tool">ISTQB CTFL</span>
+          <span class="tool">ISTQB CT-GenAI</span>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="section-heading reveal">
+          <div>
+            <div class="section-kicker">Certifications</div>
+            <h2>Verified, not just listed.</h2>
+          </div>
+          <p>
+            Both ISTQB certifications can be checked through the issuing badge platform and on the official ISTQB
+            Successful Candidate Register.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="panel cert-card reveal">
+            <!-- To use the official badge artwork: save the image to assets/badges/istqb-ctfl.png and replace the inner <svg> block with
+                 <img src="assets/badges/istqb-ctfl.png" alt="ISTQB Certified Tester Foundation Level badge, issued by Brightest" width="104" height="104" /> -->
+            <a class="cert-badge" href="https://www.credly.com/badges/dfa09761-6ab9-43f9-a7b4-84fc699c3c23" target="_blank" rel="noopener noreferrer" aria-label="View the ISTQB CTFL digital badge on Credly">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" />
+              </svg>
+              CTFL
+            </a>
+            <div>
+              <h3>ISTQB® Certified Tester – Foundation Level (CTFL)</h3>
+              <p class="cert-meta">Issued by Brightest · June 2023</p>
+              <div class="cert-links">
+                <a href="https://www.credly.com/badges/dfa09761-6ab9-43f9-a7b4-84fc699c3c23" target="_blank" rel="noopener noreferrer">View digital badge</a>
+                <a href="https://scr.istqb.org/?name=Sarah+Sayed+Abdelfattah+Moustafa&amp;number=Brightest2023020877&amp;orderBy=relevancy&amp;orderDirection=&amp;dateStart=&amp;dateEnd=&amp;expiryStart=&amp;expiryEnd=&amp;certificationBody=&amp;examProvider=&amp;certificationLevel=&amp;country=" target="_blank" rel="noopener noreferrer">Verify on ISTQB register</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel cert-card reveal">
+            <!-- To use the official badge artwork: save the image to assets/badges/istqb-ct-genai.png and replace the inner <svg> block with
+                 <img src="assets/badges/istqb-ct-genai.png" alt="ISTQB Certified Tester Testing with GenAI badge, issued by iSQI" width="104" height="104" /> -->
+            <a class="cert-badge" href="https://app.skillsclub.com/credential/304028-c94205af359265c9811e592938ab912e783dcf5a62a77e10ab8971ba566b6733?locale=en" target="_blank" rel="noopener noreferrer" aria-label="View the ISTQB CT-GenAI digital badge on SkillsClub">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" />
+              </svg>
+              CT-GenAI
+            </a>
+            <div>
+              <h3>ISTQB® Certified Tester – Testing with GenAI (CT-GenAI, v1.1)</h3>
+              <p class="cert-meta">Issued by iSQI · June 2026</p>
+              <div class="cert-links">
+                <a href="https://app.skillsclub.com/credential/304028-c94205af359265c9811e592938ab912e783dcf5a62a77e10ab8971ba566b6733?locale=en" target="_blank" rel="noopener noreferrer">View digital badge</a>
+                <a href="https://scr.istqb.org/?name=sarah+sayed+abdelfattah+moustafa&amp;number=26-CTGenAI-279203-12&amp;orderBy=relevancy&amp;orderDirection=&amp;dateStart=&amp;dateEnd=&amp;expiryStart=&amp;expiryEnd=&amp;certificationBody=&amp;examProvider=&amp;certificationLevel=&amp;country=" target="_blank" rel="noopener noreferrer">Verify on ISTQB register</a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
